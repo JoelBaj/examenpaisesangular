@@ -1,0 +1,20 @@
+<div class="center">
+
+    <h1>Login</h1>
+    <form [formGroup]="miFormulario" (ngSubmit)="Iniciar()">
+        <div class="txt_field">
+            <input type="text" formControlName="usuario" placeholder="Ingrese su usuario">
+            <span></span>
+            <label> Usuario</label>
+        </div>
+
+        <div class="txt_field">
+            <input type="password" type="password" formControlName="password" placeholder="Ingrese su contraseña">
+            <span></span>
+            <label> Contraseña</label>
+
+        </div>
+        <input class="ingresar" type="submit" value="Acceder">
+       
+    </form>
+</div>

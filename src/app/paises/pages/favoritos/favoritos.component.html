@@ -1,0 +1,35 @@
+
+<div *ngIf="paisesFavoritos.length === 0">
+    <p>No tienes ningun pais favorito.</p>
+</div>
+<div *ngIf="paisesFavoritos.length > 0">
+    <h2>Paises Favoritos</h2>
+    <hr>
+    <table class="table table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>#</th>
+                <th>Bandera</th>
+                <th>Nombre/Capital</th>
+                <th>Región</th>
+                <th>Sub Región</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pais of paisesFavoritos; let i = index" class="animate__animated animate__fadeIn animate__faster">
+                <td>{{ i + 1 }}</td>
+                <td>
+                    <img class="small-flag" [src]="pais.flags.png">
+                </td>
+                <td>{{pais.name.common}}, {{pais.capital}}</td>
+                <td>{{ pais.region}}</td>
+                <td>{{ pais.subregion }}</td>
+                <td>
+                    <button (click)="eliminarPaisFavorito(i)" class="btn btn-danger">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+</div>
