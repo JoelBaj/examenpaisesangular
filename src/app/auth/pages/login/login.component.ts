@@ -14,15 +14,13 @@ export class LoginComponent implements OnInit {
     usuario:['admin', [Validators.required]],
     password:['admin', [Validators.required]]
   })
-  
+
   constructor(private fb: FormBuilder, private router:Router,
     private authService: AuthService) { 
 
   }
   
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {  }
 
   Iniciar() {
     const { usuario, password } = this.miFormulario.value;
